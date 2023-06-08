@@ -1,8 +1,11 @@
 import IITH from './IITH.mp4'
+import Navbar from './Navbar'
 const Home = () => {
 
     return (
-        <div className='grid grid-cols-1 gap-4'>
+       <div>
+        <Navbar/>
+         <div className='grid grid-cols-1 gap-4'>
             <div>
                 <video autoPlay loop muted
                     className='w-full h-full top-0 object-cover -z-40 absolute overflow-clip'>
@@ -17,6 +20,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+       </div>
     );
 }
 

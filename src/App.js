@@ -1,18 +1,30 @@
 import { BrowserRouter, Routes,Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import React from "react";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Donate from "./components/Donate";
+import { ClipLoader } from "react-spinners";
 
 function App() {
+
+  const LazyHome = React.lazy(() => {
+    return new Promise(resolve => setTimeout(resolve(import("./components/Home")), 5 * 1000))
+  });
+
+  const LazyContact = React.lazy(() => {
+    return new Promise(resolve => setTimeout(resolve(import("./components/Contact")), 5 * 1000))
+  })
+
+
   return (
     <BrowserRouter>
-     <Navbar/>
      <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<React.Suspense fallback={<div className="flex justify-center items-center w-100 h-100" ><ClipLoader size={50} color="#F37A24" loading={true}/></div>}>
+          <LazyHome/>
+        </React.Suspense> }/>
         <Route path="/About" element={<About/>}/>
-        <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/Contact" element={<React.Suspense fallback={<p>Loading...</p>}>
+          <LazyContact/>
+        </React.Suspense> }/>
         <Route path="/donate" element={<Donate/>}/>
         <Route path="*" element={<h1>404 Not Found</h1>}/>
      </Routes>

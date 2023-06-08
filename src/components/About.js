@@ -1,6 +1,10 @@
+import Navbar from "./Navbar";
+
 const About = () => {
     return (
-        <div className="bg-black flex items-center justify-center p-24">
+        <div>
+            <Navbar/>
+            <div className="bg-black flex items-center justify-center p-24">
             <div className="bg-gradient-to-tl from-purple-900 to-green-700 h-full w-3/4 bg-cover bg-center relative ">
                 <img src="https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="w-full h-full object-cover absolute mix-blend-overlay"alt=""></img>
                 <div className="p-28 text-white">
@@ -14,6 +18,7 @@ const About = () => {
                     <p>our support in any form would help us build the institute and achieve the status of being 'the best' from 'one of the best'. We are always available to hear from you and to welcome you back to IIT Hyderabad.</p>
                 </div>
             </div>
+        </div>
         </div>
            );
 }
