@@ -7,11 +7,11 @@ import { ClipLoader } from "react-spinners";
 function App() {
 
   const LazyHome = React.lazy(() => {
-    return new Promise(resolve => setTimeout(resolve(import("./components/Home")), 5 * 1000))
+    return new Promise(resolve => setTimeout(resolve(import("./components/Home")), 9 * 1000))
   });
 
   const LazyContact = React.lazy(() => {
-    return new Promise(resolve => setTimeout(resolve(import("./components/Contact")), 5 * 1000))
+    return new Promise(resolve => setTimeout(resolve(import("./components/Contact")), 9 * 1000))
   })
 
 
