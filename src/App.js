@@ -18,11 +18,11 @@ function App() {
   return (
     <BrowserRouter>
      <Routes>
-        <Route path="/" element={<React.Suspense fallback={<div className="flex justify-center items-center w-100 h-100" ><ClipLoader size={50} color="#F37A24" loading={true}/></div>}>
+        <Route path="/" element={<React.Suspense fallback={<div className="flex justify-center items-center w-100 h-screen " ><ClipLoader size={50} color="#F37A24" loading={true}/></div>}>
           <LazyHome/>
         </React.Suspense> }/>
         <Route path="/About" element={<About/>}/>
-        <Route path="/Contact" element={<React.Suspense fallback={<p>Loading...</p>}>
+        <Route path="/Contact" element={<React.Suspense fallback={<div className="flex justify-center items-center w-100 h-screen" ><ClipLoader size={50} color="#F37A24" loading={true}/></div>}>
           <LazyContact/>
         </React.Suspense> }/>
         <Route path="/donate" element={<Donate/>}/>
